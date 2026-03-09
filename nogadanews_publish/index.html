@@ -31,9 +31,8 @@
   <meta property="og:url" content="__DEPLOY_PRIME_URL__/" />
 
   <!-- Favicons / App Icons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/logo.png" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
 
   <!-- PWA -->
   <link rel="manifest" href="/site.webmanifest">
@@ -70,6 +69,7 @@
       <nav class="nav" aria-label="주요 메뉴">
         <a href="index.html">홈</a>
         <a href="articles/procurements.html">입찰·공고</a>
+        <a href="articles/labor_market.html">노동시장</a>
         <a href="newsroom.html">뉴스룸</a>
         <a href="newsroom.html#rights">권익보호</a>
         <a href="newsroom.html#community">현장커뮤니티</a>
@@ -86,19 +86,19 @@
 
     <div class="container header-hero">
       <div class="eyebrow">NOGADA NEWS</div>
-      <h1 class="hero-title">현장의 진실을, 더 빠르고 더 정확하게</h1>
+      <h1 class="hero-title">현장의 진실을, 더 빠르고<br>더 정확하게</h1>
       <p class="hero-desc">노동의 가치를 기록하고, 권익을 지키며, 현장을 연결합니다.</p>
 
       <div class="hero-cta">
         <a class="btn btn-primary" href="newsroom.html">뉴스룸 보기</a>
       </div>
       
-      <div style="margin-top:18px;">
+      <div class="hero-recommend" style="margin-top:18px;">
         <h4 style="margin:0 0 8px 0;">메인룸 추천 기사</h4>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn" href="articles/in_depth_analysis.html" style="background:#2980b9;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;">[상세분석] 용연~덕남정수장 입찰 조건</a>
-          <a class="btn" href="articles/industry_trend.html" style="background:#c0392b;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;">[업계동향] 대전 건설사 컨소시엄</a>
-          <a class="btn" href="articles/field_notebook.html" style="background:#2c3e50;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;">[취재수첩] 세종시 공사 중단 현장</a>
+        <div class="hero-recommend-btns">
+          <a class="btn hero-recommend-btn" href="articles/in_depth_analysis.html" style="background:#2980b9;color:#fff;">[상세분석] 용연~덕남정수장 입찰 조건</a>
+          <a class="btn hero-recommend-btn" href="articles/industry_trend.html" style="background:#c0392b;color:#fff;">[업계동향] 대전 건설사 컨소시엄</a>
+          <a class="btn hero-recommend-btn" href="articles/field_notebook.html" style="background:#2c3e50;color:#fff;">[취재수첩] 세종시 공사 중단 현장</a>
         </div>
       </div>
 
@@ -129,12 +129,46 @@
     </div>
   </section>
 
+  <!-- CONTACT / REPORT (Kakao only) -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2 class="section-title">제보 · 상담 · 제휴 문의</h2>
+        </div>
+      </div>
+
+      <div class="glass" style="padding:24px 20px; max-width:720px; text-align:center;">
+        <p style="margin:0 0 16px; color:var(--muted);">
+          현재 제보와 상담, 제휴 문의는 <strong>카카오톡 오픈채팅</strong>으로만 받고 있습니다.
+          아래 버튼을 누르시면 노가다뉴스 전용 채팅방으로 연결됩니다.
+        </p>
+        <p style="margin:0 0 20px; color:var(--muted); font-size:14px;">
+          현장 위치, 날짜, 상황(또는 문의 내용)을 최대한 구체적으로 남겨 주시면 빠르게 확인하겠습니다.
+        </p>
+        <a
+          class="btn btn-kakao btn-lg"
+          href="https://open.kakao.com/0/gYojhMci"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #222 !important;"
+        >
+          카카오톡으로 제보 / 문의하기
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="site-slogan-footer" style="text-align:center;font-weight:700;margin:0 0 8px 0;color:var(--muted);">
         (노)동의 진실함을 믿는 사람들의 · (가)교가 되어주는 따뜻한 정보로 · (다)함께 내일을 만드는 신문
       </p>
-      <p style="color: var(--muted); margin:4px 0 0"><strong>제보:</strong> <a href="tel:01030129978">010-3012-9978</a></p>
+      <p style="color: var(--muted); margin:4px 0 0">
+        <strong>제보:</strong>
+        <a href="tel:01030129978">010-3012-9978</a>
+      </p>
       <p style="color: var(--muted); margin:0">© 2026 NOGADA NEWS. All rights reserved.</p>
       <p style="color: var(--muted); margin:4px 0 0">발행인: 박상현</p>
       <p style="color: var(--muted); margin:4px 0 0">편집자: 최인석</p>
@@ -255,9 +289,5 @@
 
     loadYnaSide();
   </script>
-
-
-<!-- NOGADA_FOOTER -->
-<footer class="nogada-footer" style="border-top:1px solid #eee;padding:20px 0;text-align:center;color:#555;font-size:0.95em;background:#fafafa;">(노)동의 진실함을 믿는 사람들의 · (가)교가 되어주는 따뜻한 정보로 · (다)함께 내일을 만드는 신문<br>제보: 010-3012-9978</footer>
 </body>
 </html>

@@ -1,6 +1,16 @@
 {
   "articles": [
     {
+      "id": "breaking-2026-03-09-cleaning-unpaid",
+      "category": "속보",
+      "cover": "assets/thumbs/breaking.jpg",
+      "title": "\"청소는 끝났는데 돈은 언제?\"",
+      "excerpt": "건설현장 준공청소·마감작업 대금 미지급…법원 판례와 대응 방법",
+      "date": "2026-03-09",
+      "readTime": "6분",
+      "articleUrl": "/article_pages/breaking-2026-03-09-cleaning-unpaid.html"
+    },
+    {
       "id": "notice-001",
       "category": "창간특집",
       "cover": "assets/thumbs/launch.jpg",

@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
   <title>인터뷰 | 현장 노동자 A씨의 고백</title>
   <style>
-    body { font-family: 'Pretendard', sans-serif; line-height: 1.8; color: #333; max-width: 800px; margin: 20px auto; padding: 20px; background-color: #f4f7f6; }
-    .interview-container { background: #fff; padding: 45px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); position: relative; overflow: hidden; }
+    body { font-family: 'Pretendard', sans-serif; line-height: 1.8; color: #333; background-color: #f4f7f6; margin:0; padding:0; }
+    .interview-container { width: min(800px, 100%); margin: 28px auto; background: #fff; padding: 36px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.07); position: relative; overflow: hidden; box-sizing: border-box; }
+    @media (max-width: 600px) { .interview-container { margin: 16px; padding: 16px; border-radius: 10px; } h1 { font-size: 1.25rem; } }
     .interview-container::before { content: 'INTERVIEW'; position: absolute; top: -10px; right: -10px; font-size: 5em; font-weight: 900; color: #f9f9f9; z-index: 0; }
     .content-box { position: relative; z-index: 1; }
     .category { color: #27ae60; font-weight: bold; font-size: 1.1em; }

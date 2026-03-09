@@ -29,7 +29,23 @@ ul { list-style: none; }
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
+  width: 100%;
   padding: 0 20px;
+}
+
+/* 모바일: 화면 가장자리와 텍스트 간격 확보 */
+@media (max-width: 768px) {
+  .container {
+    padding-left: max(20px, env(safe-area-inset-left, 20px));
+    padding-right: max(20px, env(safe-area-inset-right, 20px));
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding-left: max(24px, env(safe-area-inset-left, 24px));
+    padding-right: max(24px, env(safe-area-inset-right, 24px));
+  }
 }
 
 /* --- Glassmorphism --- */
@@ -103,11 +119,11 @@ ul { list-style: none; }
     justify-content: space-between;
   }
 
-  /* 헤더 메인 카피 영역 */
+  /* 헤더 메인 카피 영역 - 좌우 패딩은 .container와 동일하게 유지 */
   .header-hero {
     position: relative;
     z-index: 2;
-    padding: 100px 0 120px;
+    padding: 100px 20px 120px;
     text-align: center;
   }
 
@@ -116,7 +132,7 @@ ul { list-style: none; }
     .site-header-video { min-height: 72vh; }
     .site-header { height: 72px; }
     .site-header-video .header-inner { height: 72px; }
-    .header-hero { padding: 48px 0 64px; text-align: left; }
+    .header-hero { padding: 48px 20px 64px; text-align: left; }
     .brand-mark { height: 44px; max-height: 56px; }
     .brand-text { font-size: 18px; }
   }
@@ -208,6 +224,47 @@ ul { list-style: none; }
   color: #222; /* 노란 배경 위에서 잘 보이는 짙은 회색 텍스트 */
 }
 
+/* 메인룸 추천 기사 버튼 3개: 가로 길이 통일, 텍스트 가운데 정렬 */
+.hero-recommend-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-recommend-btn {
+  flex: 1 1 0;
+  min-width: 120px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
+  word-break: keep-all;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: normal;
+}
+
+@media (max-width: 600px) {
+  .hero-recommend-btns {
+    flex-direction: column;
+  }
+
+  .hero-recommend-btn {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+/* 뉴스룸 보기 버튼: 높이는 유지, 가로 2배 확장(100% = 최대) */
+.hero-cta .btn {
+  padding: 12px 12px;
+  width: 100%;
+  align-self: center;
+}
+
 /* --- Grid & Cards --- */
 .section { padding: 80px 0; }
 .section-head {
@@ -259,7 +316,7 @@ ul { list-style: none; }
   }
 
   .header-hero {
-    padding: 44px 0 64px;
+    padding: 44px 20px 64px;
   }
 
   .header-bg__video {
@@ -284,11 +341,16 @@ ul { list-style: none; }
   }
 
   .header-hero {
-    padding: 34px 0 52px;
+    padding: 34px max(20px, env(safe-area-inset-right, 20px)) 52px max(20px, env(safe-area-inset-left, 20px));
     text-align: left;             /* 모바일에서 가독성 ↑ */
   }
 
+  .header-hero .eyebrow {
+    text-align: center;           /* NOGADA NEWS 가운데 정렬 */
+  }
+
   .header-hero .hero-title {
+    text-align: center;           /* hero-title 가운데 정렬 */
     font-size: clamp(26px, 7.2vw, 38px);
     line-height: 1.15;
   }
@@ -297,6 +359,8 @@ ul { list-style: none; }
     font-size: 15px;
     line-height: 1.55;
     max-width: 34em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .hero-cta {
@@ -307,7 +371,7 @@ ul { list-style: none; }
   }
 
   .hero-cta .btn {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 
@@ -338,7 +402,7 @@ ul { list-style: none; }
   }
 
   .header-hero {
-    padding: 28px 0 44px;
+    padding: 28px max(24px, env(safe-area-inset-right, 24px)) 44px max(24px, env(safe-area-inset-left, 24px));
   }
 }
 
@@ -401,6 +465,9 @@ ul { list-style: none; }
 /* --- YNA-like additions (merged from src/style.yna.css) --- */
 /* Retain existing brand fonts/colors; add YNA-specific variables and classes */
 :root{
+  --yna-accent:#d32f2f;
+  --yna-body:#222;
+  --yna-muted:#666;
 }
 
 /* Slogan and reporting phone color overrides */
@@ -409,13 +476,29 @@ ul { list-style: none; }
   color: #27ae60 !important; /* green */
 }
 
+/* header-slogan-area: container 밖에 있어 좌우 패딩 필요 */
+.header-slogan-area {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .header-slogan-area {
+    padding-left: max(20px, env(safe-area-inset-left, 20px));
+    padding-right: max(20px, env(safe-area-inset-right, 20px));
+  }
+}
+
+@media (max-width: 420px) {
+  .header-slogan-area {
+    padding-left: max(24px, env(safe-area-inset-left, 24px));
+    padding-right: max(24px, env(safe-area-inset-right, 24px));
+  }
+}
+
 .site-footer a[href^="tel:"] {
   color: #e74c3c; /* red */
   font-weight: 800;
-}
-  --yna-accent:#d32f2f;
-  --yna-body:#222;
-  --yna-muted:#666;
 }
 
 .yna-header{background:#111; color:#fff; padding:18px 20px;}
@@ -423,7 +506,7 @@ ul { list-style: none; }
 /* do not override .container global rules */
 .yna-article h1{font-size:32px; margin:12px 0}
 .yna-meta{color:var(--yna-muted); margin-bottom:8px}
-.yna-excerpt{font-size:18px; color:var(--yna-muted);}
+.yna-excerpt{font-size:18px; color:var(--yna-muted);} 
 .yna-body p{line-height:1.7}
 .yna-footer{color:var(--yna-muted); text-align:center; padding:24px 0}
 
@@ -436,3 +519,16 @@ ul { list-style: none; }
 /* small helpers used by merged templates */
 .yna-side .card{margin-bottom:10px}
 .yna-side img{border-radius:6px}
+
+/* Responsive helpers */
+img, picture, video, iframe { max-width: 100%; height: auto; display: block; }
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 600px) {
+  :root { --container-width: 100%; }
+  body { font-size: 15px; }
+  .brand-mark { height: 48px; }
+  .site-header { padding: 8px 0; }
+  .nav { gap: 12px; font-size: 14px; }
+  .section { padding: 40px 0; }
+}
