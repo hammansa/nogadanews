@@ -15,6 +15,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: hidden; }
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
   background-color: var(--bg-dark);
@@ -219,9 +220,23 @@ ul { list-style: none; }
 .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
 .btn-outline:hover { background: var(--primary); color: #fff; }
 
+/* 홈으로 버튼: 배경=테두리색, 텍스트=검정 */
+.btn-home {
+  background: var(--primary);
+  color: #000;
+}
+.btn-home:hover {
+  background: var(--primary-dark);
+  color: #000;
+}
+
 .btn-kakao {
   background: #fee500;
   color: #222; /* 노란 배경 위에서 잘 보이는 짙은 회색 텍스트 */
+}
+.site-header .btn-kakao,
+.site-header-video .btn-kakao {
+  color: #000;
 }
 
 /* 메인룸 추천 기사 버튼 3개: 가로 길이 통일, 텍스트 가운데 정렬 */
@@ -476,6 +491,42 @@ ul { list-style: none; }
   color: #27ae60 !important; /* green */
 }
 
+/* 슬로건: 가운데 정렬 + 시작점 균일 */
+.header-slogan-area { text-align: center; }
+.header-slogan-area .site-slogan {
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+}
+.site-footer .footer-inner { text-align: center; }
+.site-slogan-footer {
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+}
+.site-footer .footer-slogan-block {
+  display: inline-block;
+  text-align: left;
+}
+.nogada-footer {
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+}
+.nogada-footer .footer-inner-wrap {
+  max-width: min(850px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+.nogada-footer .footer-slogan-block {
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* header-slogan-area: container 밖에 있어 좌우 패딩 필요 */
 .header-slogan-area {
   padding-left: 20px;
@@ -511,6 +562,47 @@ ul { list-style: none; }
 .yna-footer{color:var(--yna-muted); text-align:center; padding:24px 0}
 
 .yna-grid{display:grid; grid-template-columns: 1fr 340px; gap:20px}
+
+/* 뉴스룸: 필터 버튼 4열 균등 배치 + 밝은 청색 배경 */
+.newsroom-filter-btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.newsroom-filter-btns .btn {
+  width: 100%;
+  justify-content: center;
+  background: #e3f2fd;
+  border-color: #90caf9;
+  color: #0d47a1;
+}
+.newsroom-filter-btns .btn:hover {
+  background: #bbdefb;
+  border-color: #64b5f6;
+  color: #0d47a1;
+}
+@media (max-width: 600px) {
+  .newsroom-filter-btns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 뉴스룸: "현장의 진실을 전합니다" 한 줄 + 밝은 적색 */
+.newsroom-title {
+  font-size: clamp(20px, 4.5vw, 28px);
+  white-space: nowrap;
+  color: #e74c3c;
+}
+
+/* 뉴스룸: 기사 카드 2열 균등 크기 */
+#newsGrid {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
+  #newsGrid {
+    grid-template-columns: 1fr;
+  }
+}
 .yna-list .card{display:flex; gap:12px; align-items:flex-start}
 .yna-thumb{width:140px; height:90px; object-fit:cover}
 .yna-hero{display:flex; gap:16px; align-items:center}
@@ -519,6 +611,26 @@ ul { list-style: none; }
 /* small helpers used by merged templates */
 .yna-side .card{margin-bottom:10px}
 .yna-side img{border-radius:6px}
+
+/* 주요 기사: 썸네일·텍스트 기본 스타일 */
+.yna-side-item-inner{display:flex; gap:12px; align-items:flex-start}
+.yna-side-thumb{width:84px; height:60px; object-fit:cover; border-radius:6px; flex-shrink:0}
+.yna-side-content a{font-size:14px; font-weight:600; line-height:1.4; display:block}
+.yna-side-date{color:var(--muted); font-size:12px; margin-top:6px}
+
+/* 모바일: 이미지·텍스트 확대 (블럭 대비 비율 개선) */
+@media (max-width: 768px) {
+  .yna-side .yna-side-card{padding:18px; margin-bottom:14px}
+  .yna-side-item-inner{gap:18px}
+  .yna-side-thumb{width:140px; min-width:140px; height:100px; min-height:100px}
+  .yna-side-content a{font-size:17px; font-weight:700; line-height:1.45}
+  .yna-side-date{font-size:14px; margin-top:8px}
+}
+@media (max-width: 420px) {
+  .yna-side .yna-side-card{padding:20px}
+  .yna-side-thumb{width:160px; min-width:160px; height:115px; min-height:115px}
+  .yna-side-content a{font-size:18px}
+}
 
 /* Responsive helpers */
 img, picture, video, iframe { max-width: 100%; height: auto; display: block; }

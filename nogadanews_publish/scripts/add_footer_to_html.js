@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const footerMarker = '<!-- NOGADA_FOOTER -->';
-const footerHtml = `\n${footerMarker}\n<footer class="nogada-footer" style="border-top:1px solid #eee;padding:20px 0;text-align:center;color:#555;font-size:0.95em;background:#fafafa;">(노)동의 진실함을 믿는 사람들의 · (가)교가 되어주는 따뜻한 정보로 · (다)함께 내일을 만드는 신문<br>제보: 010-3012-9978</footer>\n`;
+const footerHtml = `\n${footerMarker}\n<footer class="nogada-footer" style="border-top:1px solid #eee;padding:20px 0;text-align:center;color:#555;font-size:0.95em;background:#fafafa;">(노)동의 진실함을 믿는 사람들의<br>(가)교가 되어주는 따뜻한 정보로<br>(다)함께 내일을 만드는 신문<br>제보: 010-4151-2121</footer>\n`;
 
 function findHtmlFiles(dir) {
   let results = [];
