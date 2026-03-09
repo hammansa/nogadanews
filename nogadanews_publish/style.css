@@ -288,6 +288,10 @@ ul { list-style: none; }
   align-items: flex-end;
   margin-bottom: 40px;
 }
+.section-head-contact { justify-content: center; text-align: center; }
+.section-head-contact .eyebrow,
+.section-head-contact .section-title { text-align: center; }
+.company-name { color: #ffd700; }
 
 .section-title { font-size: 32px; font-weight: 800; }
 
